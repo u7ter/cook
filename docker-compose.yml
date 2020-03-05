@@ -7,7 +7,7 @@ services:
       - 8080:8080 # Forward the exposed port 8080 on the container to port 8080 on the host machine
     restart: on-failure
     volumes:
-      - ./api:/usr/src/app/
+      - ./:/usr/src/app/
     depends_on:
       - mysql # This service depends on postgres. Start that first.
       # - mysql # This service depends on mysql. Start that first.
@@ -28,7 +28,7 @@ services:
        - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
        - DATABASE_HOST=${DB_HOST}
     volumes:
-       - ./data/db:/var/lib/mysql/data
+       - "./data/db:/var/lib/mysql"
     networks:
        - cook_network
 

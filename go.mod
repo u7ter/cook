@@ -1,4 +1,4 @@
-module github.com/victorsteven/fullstack
+module github.com/maksimmysak/cook
 
 go 1.13
 
